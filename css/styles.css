@@ -111,7 +111,7 @@ footer {
 	main {
 		grid-template-columns: repeat(auto-fit, minmax(min(306px, 100%), 1fr));
 		max-width: 920px;
-		margin: 6rem auto auto;
+		margin: auto;
 	}
 
 	p {
