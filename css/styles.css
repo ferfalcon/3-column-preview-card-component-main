@@ -1,0 +1,120 @@
+:root {
+	--cl-first-card: hsl(31, 77%, 52%);
+	--cl-second-card: hsl(184, 100%, 22%);
+	--cl-third-card: hsl(179, 100%, 13%);
+	--cl-light: hsl(0, 0%, 95%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: 'Lexend Deca', sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	display: grid;
+	background: var(--cl-light);
+	font-size: 15px;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+main {
+	display: grid;
+	margin: 6rem auto;
+	border-radius: .5rem;
+	overflow: hidden;
+	width: 90%;
+	max-width: 327px;
+}
+
+section {
+	padding: 3rem;
+}
+
+section:nth-child(1) {
+	background-color: var(--cl-first-card);
+}
+
+section:nth-child(2) {
+	background-color: var(--cl-second-card);
+}
+
+section:nth-child(3) {
+	background-color: var(--cl-third-card);
+}
+
+h1 {
+	font-family: 'Big Shoulders Display', cursive;
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--cl-light);
+	margin-bottom: 1.5rem;
+}
+
+p {
+	color: rgba(255, 255, 255, 0.75);
+	line-height: 25px;
+	margin-bottom: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	background-color: var(--cl-light);
+	padding: 1rem 2rem;
+	border-radius: 10rem;
+	display: inline-block;
+	border: solid 2px transparent;
+	transition: background-color .3s;
+}
+
+section:nth-child(1) a {
+	color: var(--cl-first-card);
+}
+
+section:nth-child(2) a {
+	color: var(--cl-second-card);
+}
+
+section:nth-child(3) a {
+	color: var(--cl-third-card);
+}
+
+section a:hover, 
+section a:focus, 
+section a:active {
+	color: white;
+	border-color: white;
+	background-color: transparent;
+}
+
+footer {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+@media (min-width: 60rem) {
+	main {
+		grid-template-columns: repeat(auto-fit, minmax(min(306px, 100%), 1fr));
+		max-width: 920px;
+		margin: 6rem auto auto;
+	}
+
+	p {
+		margin-bottom: 5rem;
+	}
+}
