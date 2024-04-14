@@ -6,11 +6,13 @@
 }
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
@@ -89,22 +91,12 @@ section:nth-child(3) a {
 	color: var(--cl-third-card);
 }
 
-section a:hover, 
-section a:focus, 
+section a:hover,
+section a:focus,
 section a:active {
 	color: white;
 	border-color: white;
 	background-color: transparent;
-}
-
-footer {
-	position: absolute;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	clip-path: inset(50%);
-	white-space: nowrap;
 }
 
 @media (min-width: 60rem) {
@@ -117,4 +109,14 @@ footer {
 	p {
 		margin-bottom: 5rem;
 	}
+}
+
+.signature {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
 }
