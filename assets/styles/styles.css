@@ -49,7 +49,7 @@ main {
 	@media (min-width: 64rem) {
 		grid-template-columns: repeat(3, minmax(min(19.188rem, 100%), 1fr));
 		max-width: 57.563rem;
-		margin: auto;
+		margin-block: 10.75rem auto;
 	}
 }
 
@@ -129,7 +129,7 @@ article {
 		}
 
 		@media (min-width: 64rem) {
-			margin-block-start: 6.5rem;
+			margin-block-start: 5.0rem;
 		}
 	}
 }
