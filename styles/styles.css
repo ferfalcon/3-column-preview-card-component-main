@@ -1,8 +1,17 @@
 :root {
-	--cl-first-card: hsl(31, 77%, 52%);
-	--cl-second-card: hsl(184, 100%, 22%);
-	--cl-third-card: hsl(179, 100%, 13%);
-	--cl-light: hsl(0, 0%, 95%);
+	/* 
+	// TYPOGRAPHY
+	// Family */
+	--ff-accent: 'Big Shoulders Display', sans-serif;
+	--ff-main: 'Lexend Deca', sans-serif;
+
+	--cl-first-card: hsl(31 77% 52%);
+	--cl-second-card: hsl(184 100% 22%);
+	--cl-third-card: hsl(179 100% 13%);
+
+	--cl-neutral-100: hsl(0 0% 100%);
+	--cl-neutral-100-trans: hsla(0 0% 100% / 75%);
+	--cl-neutral-200: hsl(0 0% 95%);
 }
 
 html {
@@ -23,106 +32,109 @@ img {
 }
 
 body {
-	font-family: 'Lexend Deca', sans-serif;
+	display: grid;
+	font-family: var(--ff-main);
+	background: var(--cl-neutral-200);
+	font-size: .938rem;
 	min-height: 100svh;
 	margin: 0;
-	display: grid;
-	background: var(--cl-light);
-	font-size: .938rem;
 }
 
 main {
 	display: grid;
-	margin: 6rem auto;
-	width: 90%;
+	margin: 5.5rem auto;
+	width: 94%;
 	max-width: 20.438rem;
-}
 
-section {
-	padding: 3rem;
-	display: grid;
-}
-
-section:nth-child(1) {
-	border-radius: .5rem .5rem 0 0;
-	background-color: var(--cl-first-card);
-}
-
-section:nth-child(2) {
-	background-color: var(--cl-second-card);
-}
-
-section:nth-child(3) {
-	border-radius: 0 0 .5rem .5rem;
-	background-color: var(--cl-third-card);
-}
-
-h1 {
-	font-family: 'Big Shoulders Display', cursive;
-	font-size: 2.5rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: var(--cl-light);
-	margin: 2.25rem 0 1.5rem;
-}
-
-p {
-	color: rgba(255, 255, 255, 0.75);
-	line-height: 1.563rem;
-	margin: 0 0 1.5rem;
-}
-
-a {
-	text-decoration: none;
-	background-color: var(--cl-light);
-	padding: 1rem 2rem;
-	border-radius: 10rem;
-	width: fit-content;
-	border: solid 2px transparent;
-	transition: background-color .3s;
-}
-
-section:nth-child(1) a {
-	color: var(--cl-first-card);
-}
-
-section:nth-child(2) a {
-	color: var(--cl-second-card);
-}
-
-section:nth-child(3) a {
-	color: var(--cl-third-card);
-}
-
-section a:hover,
-section a:focus,
-section a:active {
-	color: white;
-	border-color: white;
-	background-color: transparent;
-}
-
-@media (min-width: 64rem) {
-	main {
-		grid-template-columns: repeat(3, minmax(min(306px, 100%), 1fr));
-		max-width: 57.5rem;
+	@media (min-width: 64rem) {
+		grid-template-columns: repeat(3, minmax(min(19.188rem, 100%), 1fr));
+		max-width: 57.563rem;
 		margin: auto;
 	}
+}
 
+article {
+	padding: 3rem;
+	display: grid;
+
+	&:nth-child(1) {
+		border-radius: .5rem .5rem 0 0;
+		background-color: var(--cl-first-card);
+	}
+	
+	&:nth-child(2) {
+		background-color: var(--cl-second-card);
+	}
+	
+	&:nth-child(3) {
+		border-radius: 0 0 .5rem .5rem;
+		background-color: var(--cl-third-card);
+	}
+
+	@media (min-width: 64rem) {
+		&:nth-child(1) {
+			border-radius: .5rem 0 0 .5rem;
+		}
+	
+		&:nth-child(3) {
+			border-radius: 0 .5rem .5rem 0;
+		}
+	}
+
+	h1 {
+		font-family: var(--ff-accent);
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--cl-neutral-100);
+		margin-block: 2.25rem 0;
+	}
+	
 	p {
-		margin-bottom: 5rem;
+		color: var(--cl-neutral-100-trans);
+		line-height: 1.667;
+		margin-block: 1.5rem 0;
 	}
+	
+	a {
+		font-size: .938rem;
+		text-decoration: none;
+		width: fit-content;
+		align-content: center;
+		margin-block: 1.5rem 0;
+		padding: .833em 1.943em;
+		background-color: var(--cl-neutral-100);
+		border: solid .125rem transparent;
+		border-radius: 10rem;
+		transition: background-color .3s;
 
-	section:nth-child(1) {
-		border-radius: .5rem 0 0 .5rem;
-	}
+		:is(article):nth-child(1) & {
+			color: var(--cl-first-card);
+		}
+		
+		:is(article):nth-child(2) & {
+			color: var(--cl-second-card);
+		}
+		
+		:is(article):nth-child(3) & {
+			color: var(--cl-third-card);
+		}
 
-	section:nth-child(3) {
-		border-radius: 0 .5rem .5rem 0;
+		:is(article) &:hover,
+		:is(article) &:focus,
+		:is(article) &:active {
+			color: var(--cl-neutral-100);
+			border-color: var(--cl-neutral-100);
+			background-color: transparent;
+		}
+
+		@media (min-width: 64rem) {
+			margin-block-start: 6.5rem;
+		}
 	}
 }
 
-.signature {
+footer {
 	position: absolute;
 	height: 1px;
 	width: 1px;
